@@ -7,11 +7,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 
 export class AlbumsListComponet implements OnInit{
-    public titulo:string;
-    
+    public title:string;
+
 
     ngOnInit(){
-        this.titulo='Listado de albunes';
-        console.log("albums-list.component");
+        this.title='Listado de albunes';
+        console.log("albums-list.component cargando");
     }
 }
