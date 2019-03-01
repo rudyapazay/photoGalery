@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client-albums';
-  author = 'Rudy Apaza escobar ';
+  author = 'Rudy Apaza Yanqui';
+  year = '2019';
 }
 
 
