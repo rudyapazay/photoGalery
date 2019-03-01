@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'client-albums';
   author = 'Rudy Apaza';
-  direction = 'Urb los Lirios ';
+  direction = 'Urb los Lirios SN';
 }
