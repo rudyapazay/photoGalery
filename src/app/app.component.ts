@@ -10,5 +10,5 @@ export class AppComponent {
   author = 'Rudy Apaza yanqui';
   direction = 'Urb los Lirios SN Mz-E Lt-6';
   email = 'rudyapazay@gmail.com';
-  blog = 'probando';
+  blog = 'probando otro';
 }
