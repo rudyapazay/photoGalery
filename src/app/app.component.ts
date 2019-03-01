@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'client-albums';
   author = 'Rudy Apaza';
   direction = 'Urb los Lirios SN';
+  email = 'rudyapazay@gmail.com';
 }
