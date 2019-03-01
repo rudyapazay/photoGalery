@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'client-albums';
   author = 'Rudy Apaza';
-  direction = 'Urb los Lirios SN';
+  direction = 'Urb los Lirios SN Mz-E Lt-6';
   email = 'rudyapazay@gmail.com';
 }
