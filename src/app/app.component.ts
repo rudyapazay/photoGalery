@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute, Params} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'client-albums';
-  author = 'Rudy Apaza Yanqui';
-  year = '2019';
+  title = 'APP - Albums';
+  description = 'Aplicacion de albums con NodeJs y Angular';
+
 }
 
 

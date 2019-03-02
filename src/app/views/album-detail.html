@@ -1,0 +1,11 @@
+<h2> {{titulo}}</h2>
+<div class="loading" *ngIf="loading">
+    <img src="../../assets/images/loader.gif" >
+</div>
+
+<div *ngIf="album" class = "album-box">
+    <div class ="data-rest">
+        <h3> Album: {{album.title}} </h3>
+        <p> Descripcion: {{album.description}} </p>
+    </div>
+</div>
