@@ -7,5 +7,21 @@
     <div class ="data-rest">
         <h3> Album: {{album.title}} </h3>
         <p> Descripcion: {{album.description}} </p>
+        <a [routerLink]="['/crear-image',album._id]" class="btn btn-default"> Añadir imagen</a>
     </div>
+    
+    
+    <div id="gallery-images" *ngIf="images">
+        <ul id="picture-list">
+            <li *ngFor = "let image of images " class="image-item"  >
+                <div class="picture">
+                    <img src="{{api_url + image.picture}}" *ngIf = "image.picture && image.picture !== null"  />
+                </div>
+                <div class="title">
+                    <a [routerLink]="['/image',image._id]">{{image.title}}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
 </div>

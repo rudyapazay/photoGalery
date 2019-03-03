@@ -4,31 +4,40 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import {AlbumService} from '../services/album.service';
 
 import {Album} from '../models/album'
-import { ThrowStmt } from '@angular/compiler';
+import { ImageService } from '../services/image.service';
+import { Image } from '../models/image';
 
 @Component({
     selector: 'albums-detail',
     templateUrl: '../views/album-detail.html',
-    providers:[AlbumService]
+    providers:[
+        AlbumService,
+        ImageService
+    ]
 })
 
 export class AlbumsDetailComponent implements OnInit{
     public titulo:string;
     public album:Album;
+    public images:Image[];
     public errorMessage:any;
-    public loading: boolean;
- 
+    public loading: boolean; 
+    public api_url:string  
+    confirmado: any;
+    
     constructor(
         private _route:ActivatedRoute,
         private _router:Router,
-        private _albumService: AlbumService
-    ){
-        this.titulo='Detalles del album';
-    }
-
-    ngOnInit(){
-        //console.log("albums-detail.component cargando");
-        this.getAlbum();
+        private _albumService: AlbumService,
+        private _imageService:ImageService
+        ){
+            this.titulo='Detalles del album';
+        }
+        
+        ngOnInit(){
+            //console.log("albums-detail.component cargando");
+            this.api_url =this._imageService.getApiUrl('get-image/');
+            this.getAlbum();
     }
 
     getAlbum(){
@@ -42,6 +51,28 @@ export class AlbumsDetailComponent implements OnInit{
                     if(!this.album){
                         this._router.navigate(['/']);
                     }
+                    else{
+                        //  llamada al metodo del servicio de imagenes
+                        this._imageService.getImages(result.album._id).subscribe(
+                            response=>{
+                                this.images = response.images;
+                                if(!this.images.length){
+                                    console.log('Sin imagenes');
+                                }
+                                else{
+                                    //console.log(this.images);
+                                }
+                                
+                            },
+                            error=>{
+                                this.errorMessage = <any>error;
+                                if(this.errorMessage != null){
+                                    console.log(this.errorMessage);
+                                    this._router.navigate(['/']);
+                                }
+                            }
+                        );
+                    }
                     this.loading=false;   
                 },
                 error=>{
@@ -54,6 +85,8 @@ export class AlbumsDetailComponent implements OnInit{
             ); 
         });
     }
+
+    
        
     
 }

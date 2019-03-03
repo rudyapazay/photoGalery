@@ -10,6 +10,9 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AlbumAddComponent } from './components/album-add.component';
 import { AlbumsDetailComponent } from './components/album-detail.component';
 import { AlbumsEditComponent } from './components/album-edit.component';
+import { ImageAddComponent } from './components/image-add.component';
+import { ImageEditComponent } from './components/image-edit.component';
+import { ImageDetailComponent } from './components/image-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AlbumsEditComponent } from './components/album-edit.component';
     AlbumsListComponent,
     AlbumAddComponent,
     AlbumsDetailComponent,
-    AlbumsEditComponent
+    AlbumsEditComponent,
+    ImageAddComponent,
+    ImageEditComponent,
+    ImageDetailComponent
   ],
   imports: [
     BrowserModule,
